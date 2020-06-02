@@ -1,7 +1,5 @@
 # hardware/rainloop
 
-![](https://i.goopics.net/nI.png)
-
 ### What is this ?
 
 Rainloop is a simple, modern & fast web-based client. More details on the [official website](http://www.rainloop.net/).
@@ -51,3 +49,4 @@ rainloop:
 #### How to setup
 
 https://github.com/hardware/mailserver/wiki/Rainloop-initial-configuration
+

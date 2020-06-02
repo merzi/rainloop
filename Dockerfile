@@ -1,7 +1,8 @@
-FROM alpine:3.10
+FROM alpine:3.11
 
-LABEL description "Rainloop is a simple, modern & fast web-based client" \
-      maintainer="Hardware <contact@meshup.net>"
+LABEL description "Rainloop is a simple, modern & fast web-based client"
+
+ARG RAINLOOP_VER=1.14.0
 
 ARG GPG_FINGERPRINT="3B79 7ECE 694F 3B7B 70F3  11A4 ED7C 49D9 87DA 4591"
 
@@ -33,8 +34,9 @@ RUN echo "@community https://nl.alpinelinux.org/alpine/v3.10/community" >> /etc/
     php7-ldap@community \
     php7-simplexml@community \
  && cd /tmp \
- && wget -q https://www.rainloop.net/repository/webmail/rainloop-community-latest.zip \
- && wget -q https://www.rainloop.net/repository/webmail/rainloop-community-latest.zip.asc \
+ && RAINLOOP_ZIP="rainloop-community-${RAINLOOP_VER}.zip" \
+ && wget -q -O rainloop-community-latest.zip https://github.com/RainLoop/rainloop-webmail/releases/download/v${RAINLOOP_VER}/${RAINLOOP_ZIP} \
+ && wget -q -O rainloop-community-latest.zip.asc https://github.com/RainLoop/rainloop-webmail/releases/download/v${RAINLOOP_VER}/${RAINLOOP_ZIP}.asc \
  && wget -q https://www.rainloop.net/repository/RainLoop.asc \
  && gpg --import RainLoop.asc \
  && FINGERPRINT="$(LANG=C gpg --verify rainloop-community-latest.zip.asc rainloop-community-latest.zip 2>&1 \
