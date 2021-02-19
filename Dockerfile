@@ -1,14 +1,14 @@
-FROM alpine:3.11
+FROM alpine:3.13
 
 LABEL description "Rainloop is a simple, modern & fast web-based client"
 
-ARG RAINLOOP_VER=1.14.0
+ARG RAINLOOP_VER=1.15.0
 
 ARG GPG_FINGERPRINT="3B79 7ECE 694F 3B7B 70F3  11A4 ED7C 49D9 87DA 4591"
 
 ENV UID=991 GID=991 UPLOAD_MAX_SIZE=25M LOG_TO_STDOUT=false MEMORY_LIMIT=128M
 
-RUN echo "@community https://nl.alpinelinux.org/alpine/v3.10/community" >> /etc/apk/repositories \
+RUN echo "@community https://nl.alpinelinux.org/alpine/v3.13/community" >> /etc/apk/repositories \
  && apk -U upgrade \
  && apk add -t build-dependencies \
     gnupg \

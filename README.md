@@ -1,4 +1,4 @@
-# hardware/rainloop
+# mailserver2/rainloop
 
 ![](https://i.goopics.net/nI.png)
 
@@ -37,10 +37,10 @@ Rainloop is a simple, modern & fast web-based client. More details on the [offic
 
 ```yml
 # Full example :
-# https://github.com/hardware/mailserver/blob/master/docker-compose.sample.yml
+# https://github.com/mailserver2/mailserver/blob/master/docker-compose.sample.yml
 
 rainloop:
-  image: hardware/rainloop
+  image: mailserver2/rainloop
   container_name: rainloop
   volumes:
     - /mnt/docker/rainloop:/rainloop/data
@@ -50,5 +50,4 @@ rainloop:
 
 #### How to setup
 
-https://github.com/hardware/mailserver/wiki/Rainloop-initial-configuration
-
+https://github.com/mailserver2/mailserver/wiki/Rainloop-initial-configuration
